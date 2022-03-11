@@ -51,7 +51,7 @@ class RoutesController < ApplicationController
     puts headers
 
     response = Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
-        request = Net::HTTP::Post.new(uri, headers)
+        request = Net::HTTP::Get.new(uri, headers)
         http.request(request)
     end
     puts response
